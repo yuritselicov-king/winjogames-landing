@@ -23,7 +23,8 @@ no framework, no JavaScript required to render.
 - `img/` — page imagery (hero, key art, game icons)
 - `logo.png` — wordmark logo used in the header and footer
 - `favicon.ico` — multi-size (16/32/48) for the default `/favicon.ico` request
-- `icons/` — PNG favicons (16/32/48/192/512) and `apple-touch-icon.png` (180)
+- `icons/` — PNG favicons (16/32/48/192/512) and `apple-touch-icon.png` (180).
+  Generated from `logo.png`, transparent background, mark centred with a 4% margin.
 - `og.png` — 1200×630 social share card, referenced by `og:image`
 - `site.webmanifest` — PWA manifest pointing at the 192/512 icons
 
