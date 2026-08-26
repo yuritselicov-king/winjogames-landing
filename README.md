@@ -67,6 +67,5 @@ Settings → Pages.
 - `og:image` points at `https://winjogames.com/og.png`, which does not exist
   yet. Social shares will have no preview image until a 1200×630 asset is added
   at the site root.
-- Footer LinkedIn and X links are `href="#"` placeholders.
 - There is no `404.html`, so unknown paths fall through to GitHub's generic
   404 page.
