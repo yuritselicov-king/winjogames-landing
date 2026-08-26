@@ -56,16 +56,25 @@ preprocessing.
 
 ### GoDaddy DNS
 
-Set these records on `winjogames.com`:
+Set these four `A` records on the apex (`@`) of `winjogames.com`:
 
-| Type  | Name | Value                          |
-|-------|------|--------------------------------|
-| A     | @    | 185.199.108.153                |
-| A     | @    | 185.199.109.153                |
-| A     | @    | 185.199.110.153                |
-| A     | @    | 185.199.111.153                |
-| CNAME | www  | yuritselicov-king.github.io    |
+| Type | Name | Value           |
+|------|------|-----------------|
+| A    | @    | 185.199.108.153 |
+| A    | @    | 185.199.109.153 |
+| A    | @    | 185.199.110.153 |
+| A    | @    | 185.199.111.153 |
 
-Delete GoDaddy's default parked-page A record and any conflicting `www` record
-first. After DNS propagates, enable **Enforce HTTPS** in the repo's
-Settings → Pages.
+**Leave the `www` record alone.** GoDaddy creates a `CNAME www → @` by default and
+will not let you delete it while domain forwarding exists. You do not need to:
+pointing `www` at the apex resolves to the same four GitHub IPs, and GitHub Pages
+routes on the `Host` header, so it serves `www` and redirects it to the apex. A
+`CNAME www → yuritselicov-king.github.io` is equivalent, not required.
+
+Delete GoDaddy's default parked-page `A` record if one remains. If the site ever
+flaps between GitHub and a GoDaddy parking page, remove the forwarding under
+Domain Settings → Forwarding.
+
+Then enable Pages: repo Settings → Pages → Source *Deploy from a branch*, branch
+`main`, folder `/ (root)`. The committed `CNAME` file fills in the custom domain.
+Once the certificate provisions, tick **Enforce HTTPS** — it covers apex and www.
