@@ -16,6 +16,7 @@ no framework, no JavaScript required to render.
 | `privacy.html`          | `/privacy.html`       |
 | `cookies.html`          | `/cookies.html`       |
 | `responsible-play.html` | `/responsible-play.html` |
+| `404.html`              | unknown paths         |
 
 ## Assets
 
@@ -68,8 +69,3 @@ Set these records on `winjogames.com`:
 Delete GoDaddy's default parked-page A record and any conflicting `www` record
 first. After DNS propagates, enable **Enforce HTTPS** in the repo's
 Settings → Pages.
-
-## Known gaps
-
-- There is no `404.html`, so unknown paths fall through to GitHub's generic
-  404 page.
